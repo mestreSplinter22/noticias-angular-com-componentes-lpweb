@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NoticiasRecentesComponent } from './noticias-recentes/noticias-recentes.component';
+import { BarraComponent } from './barra/barra.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NoticiasRecentesComponent
+    NoticiasRecentesComponent,
+    BarraComponent
   ],
   imports: [
     BrowserModule,

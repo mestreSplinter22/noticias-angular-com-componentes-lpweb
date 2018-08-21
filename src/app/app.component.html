@@ -1,11 +1,8 @@
 <h1>Notícias::Angular</h1>
 <hr>
-<nav>
-  <button (click)="irPara('home')">Home</button> |
-  <button (click)="irPara('lista')">Todas as notícias</button> |
-  <button (click)="irPara('cadastro')">Cadastrar</button>
-</nav>
-<hr>
+<app-barra>
+  <hr>
+</app-barra>
 
 <app-noticias-recentes [noticias]="noticiasPublicadas()" (mostrou)="onMostrou($event)" *ngIf="tela == 'home'"></app-noticias-recentes>
 
