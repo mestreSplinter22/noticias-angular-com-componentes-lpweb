@@ -1,15 +1,15 @@
 <h1>Notícias::Angular</h1>
+<hr>
+<app-barra></app-barra>
+  <hr>
+
 <!--<hr>-->
-<!--<app-barra>-->
-  <!--<hr>-->
-<!--</app-barra>-->
-<hr>
-<nav >
-<button  (click) = " irPara ('home') " > Página inicial </button > |
-<button  (click) = " irPara ('lista') " > Todas as notícias </button> |
-<button  (click) = " irPara ('cadastro') " > Cadastrar </button >
-</nav>
-<hr>
+<!--<nav >-->
+<!--<button  (click) = " irPara ('home') " > Página inicial </button > |-->
+<!--<button  (click) = " irPara ('lista') " > Todas as notícias </button> |-->
+<!--<button  (click) = " irPara ('cadastro') " > Cadastrar </button >-->
+<!--</nav>-->
+<!--<hr>-->
 
 <app-noticias-recentes [noticias]="noticiasPublicadas()" (mostrou)="onMostrou($event)" *ngIf="tela == 'home'"></app-noticias-recentes>
 
@@ -51,7 +51,7 @@
         <td>{{ noticia.autor }}</td>
         <td>{{ noticia.data }}</td>
         <td>
-          <button (click)="editar(noticia)">Editar</button> | 
+          <button (click)="telaEdicao()">Editar</button> |
           <button (click)="excluir(noticia)">Excluir</button>
         </td>
       </tr>
@@ -60,5 +60,8 @@
 </div>
 
 <div *ngIf="tela == 'cadastro'" >
- <app-cadastro-noticia [noticias]="noticias"></app-cadastro-noticia>
+ <app-cadastro-noticia [noticias]="noticias" (cadastro)="noticiasParaLista()"></app-cadastro-noticia>
+</div>
+<div *ngIf="tela =='edicao'">
+
 </div>

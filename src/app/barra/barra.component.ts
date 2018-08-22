@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-barra',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./barra.component.css']
 })
 export class BarraComponent implements OnInit {
-
+  @Input()
+  irPara;
   constructor() { }
 
   ngOnInit() {
