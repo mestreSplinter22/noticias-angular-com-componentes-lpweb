@@ -32,7 +32,7 @@ import { LeitorNoticiasComponent } from './leitor-noticias/leitor-noticias.compo
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    AppRoutingModule
+    // AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
