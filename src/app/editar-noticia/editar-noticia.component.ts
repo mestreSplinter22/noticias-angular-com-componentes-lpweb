@@ -19,20 +19,17 @@ export class EditarNoticiaComponent implements OnInit {
 
   tela = null;
 
-  @Output() navegarEdicao = new EventEmitter();
-  
+  @Output()
+  navegarEdicao = new EventEmitter();
 
   constructor() { }
 
-  irPara(nome){
+  irPara(nome) {
     this.navegarEdicao.emit(nome);
   }
 
-  
-
   ngOnInit() {
   }
-  
   date2str(d) {
     if (d) {
       const year = d.getFullYear();
@@ -45,7 +42,21 @@ export class EditarNoticiaComponent implements OnInit {
       return '';
     }
   }
-
+  salvar(form) {
+  const noticia = this.noticias.find(n => n.id === this.editarNoticia.id);
+  noticia.titulo = this.titulo;
+  noticia.conteudo = this.conteudo;
+  noticia.autor = this.autor;
+  noticia.emailDoAutor = this.emailDoAutor;
+  if (this.data) {
+  noticia.data = new Date(this.data);
+} else {
+  this.data = null;
+}
+this.editarNoticia = null;
+form.reset();
+this.irPara('lista');
+}
 
   editar(noticia) {
     this.editarNoticia = noticia;
@@ -55,6 +66,10 @@ export class EditarNoticiaComponent implements OnInit {
     this.emailDoAutor = noticia.emailDoAutor;
     this.data = this.date2str(noticia.data);
     this.irPara('edicao');
+  }
+  cancelarEdicao() {
+    this.editarNoticia = null;
+    this.irPara('lista');
   }
 
 }

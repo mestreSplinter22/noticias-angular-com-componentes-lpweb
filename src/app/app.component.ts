@@ -77,6 +77,7 @@ export class AppComponent implements OnInit {
    */
   listaPesquisa = null;
 
+  noticiaID = null;
   /**
    * Implementação da interface {@link OnInit}. Define dados de exemplo
    */
