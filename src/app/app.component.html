@@ -13,50 +13,12 @@
  -->
 <app-noticias-recentes [noticias]="noticiasPublicadas()" (mostrou)="onMostrou($event)" *ngIf="tela == 'home'"></app-noticias-recentes>
 
-<div *ngIf="tela == 'leitura' && leituraNoticia">
-  <h2>{{ leituraNoticia.titulo }}</h2>
-  <div class="leitura-noticia-info">
-    Por {{ leituraNoticia.autor }}
-    <span *ngIf="leituraNoticia.emailDoAutor">({{ leituraNoticia.emailDoAutor }})</span>
-    em {{ leituraNoticia.data | date }}
-  </div>
-  <hr>
-  <div class="leitura-noticia-conteudo">
-    {{ leituraNoticia.conteudo }}
-  </div>
-  <div class="leitura-noticia-rodape">
-    <button (click)="fechar()">Fechar</button>
-  </div>
+<div *ngIf="tela == 'leitura'">
+  <app-leitor-noticias [leituraNoticia]="leituraNoticia" (navegacao)="irPara($event)"  ></app-leitor-noticias>
 </div>
 
 <div *ngIf="tela == 'lista'">
-  <h2>Todas as notícias</h2>
-  <div id="lista-pesquisar">
-    <input type="search" placeholder="Digite para pesquisar..." [(ngModel)]="listaPesquisa">
-  </div>
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Título</th>
-        <th scope="col">Autor</th>
-        <th scope="col">Publicada</th>
-        <th scope="col">Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let noticia of noticiasParaLista()">
-        <td>{{ noticia.id }}</td>
-        <td>{{ noticia.titulo }}</td>
-        <td>{{ noticia.autor }}</td>
-        <td>{{ noticia.data }}</td>
-        <td>
-          <button (click)="irPara('edicao')"   >Editar</button> |
-          <button (click)="excluir(noticia)">Excluir</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <app-listar-noticias [listaPesquisa]="listaPesquisa" [noticias]="noticias" (listarNoticias)="irPara( $event)" ></app-listar-noticias>
 </div>
 
 <div *ngIf="tela == 'cadastro'" >

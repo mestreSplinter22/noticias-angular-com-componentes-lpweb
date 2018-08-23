@@ -43,20 +43,20 @@ export class EditarNoticiaComponent implements OnInit {
     }
   }
   salvar(form) {
-  const noticia = this.noticias.find(n => n.id === this.editarNoticia.id);
-  noticia.titulo = this.titulo;
-  noticia.conteudo = this.conteudo;
-  noticia.autor = this.autor;
-  noticia.emailDoAutor = this.emailDoAutor;
-  if (this.data) {
-  noticia.data = new Date(this.data);
-} else {
-  this.data = null;
-}
-this.editarNoticia = null;
-form.reset();
-this.irPara('lista');
-}
+    const noticia = this.noticias.find(n => n.id === this.editarNoticia.id);
+    noticia.titulo = this.titulo;
+    noticia.conteudo = this.conteudo;
+    noticia.autor = this.autor;
+    noticia.emailDoAutor = this.emailDoAutor;
+    if (this.data) {
+      noticia.data = new Date(this.data);
+    } else {
+      this.data = null;
+    }
+    this.editarNoticia = null;
+    form.reset();
+    this.irPara('lista');
+  }
 
   editar(noticia) {
     this.editarNoticia = noticia;
