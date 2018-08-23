@@ -51,7 +51,7 @@
         <td>{{ noticia.autor }}</td>
         <td>{{ noticia.data }}</td>
         <td>
-          <button (click)="irPara($event)">Editar</button> |
+          <button (click)="irPara('edicao')"   >Editar</button> |
           <button (click)="excluir(noticia)">Excluir</button>
         </td>
       </tr>
@@ -60,8 +60,8 @@
 </div>
 
 <div *ngIf="tela == 'cadastro'" >
- <app-cadastro-noticia [noticias]="noticias" (cadastro)="noticiasParaLista()"></app-cadastro-noticia>
+ <app-cadastro-noticia [noticias]="noticias" (listarNoticias)="irPara( $event )"></app-cadastro-noticia>
 </div>
 <div *ngIf="tela =='edicao'">
-
+  <app-editar-noticia [noticias]="noticias" (navegarEdicao)="irPara($event)"></app-editar-noticia>
 </div>

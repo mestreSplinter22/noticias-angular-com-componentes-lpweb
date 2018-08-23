@@ -11,15 +11,13 @@ export class CadastroNoticiaComponent implements OnInit {
   noticias;
 
   @Output()
-  cadastro = new EventEmitter<Noticia>();
+  listarNoticias = new EventEmitter();
 
   titulo = null;
   autor = null;
   conteudo = null;
   emailDoAutor = null;
   data = null;
-
-  
 
   constructor() { }
 
@@ -51,5 +49,9 @@ export class CadastroNoticiaComponent implements OnInit {
       );
       this.noticias.push(noticia);
     form.reset();
+    this.irPara('lista');
+  }
+  irPara(nome) {
+    this.listarNoticias.emit(nome);
   }
 }
