@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+// import { EventEmitter } from '../../../node_modules/protractor';
 
 @Component({
   selector: 'app-editar-noticia',
@@ -17,21 +18,21 @@ export class EditarNoticiaComponent implements OnInit {
   data = null;
 
   tela = null;
+
+  @Output() navegarEdicao = new EventEmitter();
+  
+
   constructor() { }
+
+  irPara(nome){
+    this.navegarEdicao.emit(nome);
+  }
+
+  
 
   ngOnInit() {
   }
-  irPara(nome) {
-    this.tela = nome;
-    if (nome === 'cadastro') {
-      this.editarNoticia = null;
-      this.titulo = null;
-      this.conteudo = null;
-      this.autor = null;
-      this.emailDoAutor = null;
-      this.data = null;
-    }
-  }
+  
   date2str(d) {
     if (d) {
       const year = d.getFullYear();
@@ -44,6 +45,8 @@ export class EditarNoticiaComponent implements OnInit {
       return '';
     }
   }
+
+
   editar(noticia) {
     this.editarNoticia = noticia;
     this.titulo = noticia.titulo;

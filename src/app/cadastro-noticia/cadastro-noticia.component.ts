@@ -19,6 +19,8 @@ export class CadastroNoticiaComponent implements OnInit {
   emailDoAutor = null;
   data = null;
 
+  
+
   constructor() { }
 
   ngOnInit() {

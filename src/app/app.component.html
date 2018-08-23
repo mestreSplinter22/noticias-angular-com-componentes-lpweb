@@ -1,16 +1,16 @@
 <h1>Notícias::Angular</h1>
 <hr>
-<app-barra></app-barra>
+<app-barra (navegar)="irPara($event)"></app-barra>
   <hr>
-
-<!--<hr>-->
-<!--<nav >-->
-<!--<button  (click) = " irPara ('home') " > Página inicial </button > |-->
-<!--<button  (click) = " irPara ('lista') " > Todas as notícias </button> |-->
-<!--<button  (click) = " irPara ('cadastro') " > Cadastrar </button >-->
-<!--</nav>-->
-<!--<hr>-->
-
+<!-- 
+<hr>
+<nav >
+<button  (click) = " irPara ('home') " > Página inicial </button > |
+<button  (click) = " irPara ('lista') " > Todas as notícias </button> |
+<button  (click) = " irPara ('cadastro') " > Cadastrar </button >
+</nav>
+<hr>
+ -->
 <app-noticias-recentes [noticias]="noticiasPublicadas()" (mostrou)="onMostrou($event)" *ngIf="tela == 'home'"></app-noticias-recentes>
 
 <div *ngIf="tela == 'leitura' && leituraNoticia">
@@ -51,7 +51,7 @@
         <td>{{ noticia.autor }}</td>
         <td>{{ noticia.data }}</td>
         <td>
-          <button (click)="telaEdicao()">Editar</button> |
+          <button (click)="irPara($event)">Editar</button> |
           <button (click)="excluir(noticia)">Excluir</button>
         </td>
       </tr>

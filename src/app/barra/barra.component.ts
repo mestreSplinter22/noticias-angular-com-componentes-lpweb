@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-barra',
@@ -6,11 +6,19 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./barra.component.css']
 })
 export class BarraComponent implements OnInit {
-  @Input()
-  irPara;
+/**
+ * Output para poder usar o metodo irPara de appComponet
+ */
+  @Output() navegar = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
-
+/**
+ * 
+ * @param nome nome da tela para de destino.
+ */
+  irPara(nome){
+    this.navegar.emit(nome);
+  }
 }
