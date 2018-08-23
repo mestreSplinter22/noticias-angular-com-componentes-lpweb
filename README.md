@@ -13,6 +13,7 @@ Há uma versão em produção no **Stackblitz** para cada branch:
 * **master**: https://stackblitz.com/github/jacksongomesbr/webdevbook-noticias-angular/
 * **crud-telas**: https://stackblitz.com/github/jacksongomesbr/webdevbook-noticias-angular/tree/crud-telas
 * **inicio**: https://stackblitz.com/github/jacksongomesbr/webdevbook-noticias-angular/tree/inicio
+* **componentes**: https://stackblitz.com/github.com/LPWEB-Grupo/noticias-angular-com-componentes-lpweb/tree/componentes
 
 ## Development server
 
