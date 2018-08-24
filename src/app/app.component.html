@@ -2,15 +2,6 @@
 <hr>
 <app-barra (navegar)="irPara($event)"></app-barra>
   <hr>
-<!-- 
-<hr>
-<nav >
-<button  (click) = " irPara ('home') " > Página inicial </button > |
-<button  (click) = " irPara ('lista') " > Todas as notícias </button> |
-<button  (click) = " irPara ('cadastro') " > Cadastrar </button >
-</nav>
-<hr>
- -->
 <app-noticias-recentes [noticias]="noticiasPublicadas()" (mostrou)="onMostrou($event)" *ngIf="tela == 'home'"></app-noticias-recentes>
 
 <div *ngIf="tela == 'leitura'">
@@ -18,12 +9,12 @@
 </div>
 
 <div *ngIf="tela == 'lista'">
-  <app-listar-noticias [listaPesquisa]="listaPesquisa" [noticias]="noticias" (listarNoticias)="irPara( $event)" ></app-listar-noticias>
+  <app-listar-noticias [listaPesquisa]="listaPesquisa" [noticias]="noticias" (listarNoticias)="irPara( $event)" (editarNoticia)="editar($event)" ></app-listar-noticias>
 </div>
 
 <div *ngIf="tela == 'cadastro'" >
  <app-cadastro-noticia [noticias]="noticias" (listarNoticias)="irPara( $event )"></app-cadastro-noticia>
 </div>
 <div *ngIf="tela =='edicao'">
-  <app-editar-noticia [noticias]="noticias" (navegarEdicao)="irPara($event)"></app-editar-noticia>
+  <app-editar-noticia [noticias]="editarNoticia"  [tela]="tela" (navegarEdicao)="irPara($event)" (salvarEdicao)="salvar($event)" ></app-editar-noticia>
 </div>

@@ -365,7 +365,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>BarraComponent</li>
+  <li>ListarNoticiasComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -388,7 +388,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/barra/barra.component.ts</code>
+    <code>src/app/listar-noticias/listar-noticias.component.ts</code>
 </p>
 
 
@@ -418,19 +418,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-barra</code></td>
+                <td class="col-md-9"><code>app-listar-noticias</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>barra.component.css</code></td>
+                <td class="col-md-9"><code>listar-noticias.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./barra.component.html</code></td>
+                <td class="col-md-9"><code>./listar-noticias.component.html</code></td>
             </tr>
 
 
@@ -452,15 +452,38 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#excluir">excluir</a>
+                            </li>
+                            <li>
                                 <a href="#irPara">irPara</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
+                            <li>
+                                <a href="#noticiasParaLista">noticiasParaLista</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#listaPesquisa">listaPesquisa</a>
+                            </li>
+                            <li>
+                                <a href="#noticias">noticias</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -471,7 +494,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#navegar">navegar</a>
+                                <a href="#listarNoticias">listarNoticias</a>
                             </li>
                         </ul>
                     </td>
@@ -494,7 +517,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/barra/barra.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/listar-noticias/listar-noticias.component.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -502,18 +525,58 @@
         </table>
 </section>
 
-
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="listaPesquisa"></a>
+                        <code>listaPesquisa</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>A propriedade de entrada que representa os resultados da busca, refenciando o atributo listaPesquisa de appCompoenent</p>
+</div>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/listar-noticias/listar-noticias.component.ts:18</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="noticias"></a>
+                        <code>noticias</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>A propriedade de entrada que representa a lista de notícias que devem ser apresentadas</p>
+</div>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/listar-noticias/listar-noticias.component.ts:13</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
     <section>
     <h3 id="outputs">Outputs</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-2">
-                        <a name="navegar"></a>
-                        <code>navegar</code>
+                        <a name="listarNoticias"></a>
+                        <code>listarNoticias</code>
                     </td>
                     <td class="col-md-10">
-                        <div><p>Output para poder usar o metodo irPara de appComponet</p>
+                        <div><p>O evento que permite o componente hospedado navegar pelo compoentente host atraves do metodo irPara()</p>
 </div>
                         <em><code>$event</code> type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
 
@@ -521,7 +584,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/barra/barra.component.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/listar-noticias/listar-noticias.component.ts:23</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -534,6 +597,78 @@
         <h3 id="methods">
             Methods
         </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="excluir"></a>
+                        <span class="name">
+                            <b>
+                            excluir
+                            </b>
+                            <a href="#excluir"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>excluir(noticia: )</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/listar-noticias/listar-noticias.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Exclui uma notícia, após confirmação</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>noticia</td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>A notícia para ser excluída</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -556,7 +691,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/barra/barra.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/listar-noticias/listar-noticias.component.ts:60</a></div>
                             </td>
                         </tr>
 
@@ -628,7 +763,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/barra/barra.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/listar-noticias/listar-noticias.component.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -644,6 +779,55 @@
                 </tr>
             </tbody>
         </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="noticiasParaLista"></a>
+                        <span class="name">
+                            <b>
+                            noticiasParaLista
+                            </b>
+                            <a href="#noticiasParaLista"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>noticiasParaLista()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/listar-noticias/listar-noticias.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Encontra e retorna as notícias para a lista conforme o campo
+de pesquisa <a href="../components/AppComponent.html#listaPesquisa"><code>listaPesquisa</code></a>
+considerando que seu valor está presente no título, conteúdo ou
+nome do autor.</p>
+</div>
+
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    <p>A lista de notícias para apresentar</p>
+
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 </section>
 
 
@@ -651,47 +835,101 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, Input, OnInit, Output, EventEmitter} from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, EventEmitter, Input, OnInit, Output} from &#x27;@angular/core&#x27;;
 
 @Component({
-  selector: &#x27;app-barra&#x27;,
-  templateUrl: &#x27;./barra.component.html&#x27;,
-  styleUrls: [&#x27;./barra.component.css&#x27;]
+  selector: &#x27;app-listar-noticias&#x27;,
+  templateUrl: &#x27;./listar-noticias.component.html&#x27;,
+  styleUrls: [&#x27;./listar-noticias.component.css&#x27;]
 })
-export class BarraComponent implements OnInit {
-/**
- * Output para poder usar o metodo irPara de appComponet
- */
+export class ListarNoticiasComponent implements OnInit {
+  /**
+   * A propriedade de entrada que representa a lista de notícias que devem ser apresentadas
+   */
+  @Input()
+  noticias;
+  /**
+   * A propriedade de entrada que representa os resultados da busca, refenciando o atributo listaPesquisa de appCompoenent
+   */
+  @Input()
+  listaPesquisa;
+  /**
+   * O evento que permite o componente hospedado navegar pelo compoentente host atraves do metodo irPara()
+   */
   @Output()
-  navegar &#x3D; new EventEmitter();
+  listarNoticias &#x3D; new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
   /**
+   * Encontra e retorna as notícias para a lista conforme o campo
+   * de pesquisa [&#x60;listaPesquisa&#x60;]{@link AppComponent#listaPesquisa}
+   * considerando que seu valor está presente no título, conteúdo ou
+   * nome do autor.
+   *
+   * @returns A lista de notícias para apresentar
+   */
+  noticiasParaLista() {
+    if (this.listaPesquisa) {
+      return this.noticias.filter(n &#x3D;&gt;
+        n.titulo.indexOf(this.listaPesquisa) !&#x3D;&#x3D; -1
+        || n.conteudo.indexOf(this.listaPesquisa) !&#x3D;&#x3D; -1
+        || n.autor.indexOf(this.listaPesquisa) !&#x3D;&#x3D; -1
+      );
+    } else {
+      return this.noticias;
+    }
+  }
+  /**
+   * Exclui uma notícia, após confirmação
+   * @param noticia A notícia para ser excluída
+   */
+  excluir(noticia) {
+    if (confirm(&#x60;Tem certeza que deseja excluir a notícia: ${noticia.titulo} ?&#x60;)) {
+      this.noticias.splice(this.noticias.findIndex(n &#x3D;&gt; n.id &#x3D;&#x3D;&#x3D; noticia.id), 1);
+    }
+  }
+  /**
    * Muda a tela visível.
    * @param nome O nome da nova tela (que deve se tornar visível)
    */
-  irPara(nome){
-    this.navegar.emit(nome);
+  irPara(nome) {
+    this.listarNoticias.emit(nome);
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!-- 
-&lt;nav&gt;
-  &lt;a routerLink&#x3D;&quot;/&quot;&gt;Home&lt;/a&gt;|&lt;a routerLink&#x3D;&quot;/&quot;&gt;Todas Noticias&lt;/a&gt;|&lt;a routerLink&#x3D;&quot;/cadastro&quot;&gt;Cadastro&lt;/a&gt;
-  &lt;router-outlet&gt;&lt;/router-outlet&gt;
-&lt;/nav&gt; --&gt;
-&lt;hr&gt;
-&lt;nav &gt;
-&lt;button  (click) &#x3D; &quot; irPara (&#x27;home&#x27;) &quot; &gt; Página inicial &lt;/button &gt; |
-&lt;button  (click) &#x3D; &quot; irPara (&#x27;lista&#x27;) &quot; &gt; Todas as notícias &lt;/button&gt; |
-&lt;button  (click) &#x3D; &quot; irPara (&#x27;cadastro&#x27;) &quot; &gt; Cadastrar &lt;/button &gt;
-&lt;/nav&gt;
-&lt;hr&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;h2&gt;Todas as notícias&lt;/h2&gt;
+&lt;div id&#x3D;&quot;lista-pesquisar&quot;&gt;
+  &lt;input type&#x3D;&quot;search&quot; placeholder&#x3D;&quot;Digite para pesquisar...&quot; [(ngModel)]&#x3D;&quot;listaPesquisa&quot;&gt;
+&lt;/div&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th scope&#x3D;&quot;col&quot;&gt;#&lt;/th&gt;
+    &lt;th scope&#x3D;&quot;col&quot;&gt;Título&lt;/th&gt;
+    &lt;th scope&#x3D;&quot;col&quot;&gt;Autor&lt;/th&gt;
+    &lt;th scope&#x3D;&quot;col&quot;&gt;Publicada&lt;/th&gt;
+    &lt;th scope&#x3D;&quot;col&quot;&gt;Ações&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;tr *ngFor&#x3D;&quot;let noticia of noticiasParaLista()&quot;&gt;
+    &lt;td&gt;{{ noticia.id }}&lt;/td&gt;
+    &lt;td&gt;{{ noticia.titulo }}&lt;/td&gt;
+    &lt;td&gt;{{ noticia.autor }}&lt;/td&gt;
+    &lt;td&gt;{{ noticia.data }}&lt;/td&gt;
+    &lt;td&gt;
+      &lt;button (click)&#x3D;&quot;irPara(&#x27;edicao&#x27;)&quot;   &gt;Editar&lt;/button&gt; |
+      &lt;button (click)&#x3D;&quot;excluir(noticia)&quot;&gt;Excluir&lt;/button&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -719,10 +957,10 @@ export class BarraComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- <nav>  <a routerLink="/">Home</a>|<a routerLink="/">Todas Noticias</a>|<a routerLink="/cadastro">Cadastro</a>  <router-outlet></router-outlet></nav> --><hr><nav ><button  (click) = " irPara (\'home\') " > Página inicial </button > |<button  (click) = " irPara (\'lista\') " > Todas as notícias </button> |<button  (click) = " irPara (\'cadastro\') " > Cadastrar </button ></nav><hr></div>'
+        var COMPONENT_TEMPLATE = '<div><h2>Todas as notícias</h2><div id="lista-pesquisar">  <input type="search" placeholder="Digite para pesquisar..." [(ngModel)]="listaPesquisa"></div><table>  <thead>  <tr>    <th scope="col">#</th>    <th scope="col">Título</th>    <th scope="col">Autor</th>    <th scope="col">Publicada</th>    <th scope="col">Ações</th>  </tr>  </thead>  <tbody>  <tr *ngFor="let noticia of noticiasParaLista()">    <td>{{ noticia.id }}</td>    <td>{{ noticia.titulo }}</td>    <td>{{ noticia.autor }}</td>    <td>{{ noticia.data }}</td>    <td>      <button (click)="irPara(\'edicao\')"   >Editar</button> |      <button (click)="excluir(noticia)">Excluir</button>    </td>  </tr>  </tbody></table></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BarraComponent', 'selector': 'app-barra'},{'name': 'CadastroNoticiaComponent', 'selector': 'app-cadastro-noticia'},{'name': 'EditarNoticiaComponent', 'selector': 'app-editar-noticia'},{'name': 'LeitorNoticiasComponent', 'selector': 'app-leitor-noticias'},{'name': 'ListarNoticiasComponent', 'selector': 'app-listar-noticias'},{'name': 'NoticiasRecentesComponent', 'selector': 'app-noticias-recentes'},{'name': 'TestComponent', 'selector': 'app-test'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'BarraComponent'};
+    var ACTUAL_COMPONENT = {'name': 'ListarNoticiasComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -762,7 +1000,7 @@ export class BarraComponent implements OnInit {
         <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'BarraComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ListarNoticiasComponent.html';
         </script>
 
        <script src="../js/search/search.js"></script>

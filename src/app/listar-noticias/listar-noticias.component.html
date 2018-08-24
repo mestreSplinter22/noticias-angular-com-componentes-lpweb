@@ -13,15 +13,16 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let noticia of noticiasParaLista()">
+  <tr *ngFor="let noticia of noticias">
     <td>{{ noticia.id }}</td>
     <td>{{ noticia.titulo }}</td>
     <td>{{ noticia.autor }}</td>
     <td>{{ noticia.data }}</td>
     <td>
-      <button (click)="irPara('edicao')"   >Editar</button> |
+      <button (click)="editar(noticia)">Editar</button> |
       <button (click)="excluir(noticia)">Excluir</button>
     </td>
   </tr>
+
   </tbody>
 </table>

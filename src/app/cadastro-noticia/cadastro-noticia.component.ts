@@ -25,12 +25,9 @@ export class CadastroNoticiaComponent implements OnInit {
     console.log(this.noticias);
   }
   /**
-   * Salva os dados do formulário de cadastro em dois modos:
+   * Salva os dados do formulário de Cadastro:
    *
-   * * **cadastro**: quando [`editarNoticia`]{@link AppComponent#editarNoticia} não está definido; e
-   * * **edição**, cc.
-   *
-   * Quando está no modo de cadastro, cria uma instância de {@link Noticia} e a insere no array
+   * No modo de cadastro, cria uma instância de {@link Noticia} e a insere no array
    * [`noticias`]{@link AppComponent#noticias}.
    *
    * Quando está no modo de edição, busca a notícia pelo identificador de [`editarNoticia`]{@link AppComponent#editarNoticia} e
@@ -51,6 +48,10 @@ export class CadastroNoticiaComponent implements OnInit {
     form.reset();
     this.irPara('lista');
   }
+  /**
+   * Muda a tela visível.
+   * @param nome O nome da nova tela (que deve se tornar visível)
+   */
   irPara(nome) {
     this.listarNoticias.emit(nome);
   }

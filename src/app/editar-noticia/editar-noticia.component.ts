@@ -9,67 +9,63 @@ import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 export class EditarNoticiaComponent implements OnInit {
   @Input()
   noticias;
+  @Input()
+    tela;
 
-  editarNoticia = null;
   titulo = null;
   conteudo = null;
   autor = null;
   emailDoAutor = null;
   data = null;
 
-  tela = null;
 
   @Output()
-  navegarEdicao = new EventEmitter();
+  navegarEdicao = new EventEmitter(); //Navegação atraves do metodo irPara()
+
+  @Output()
+  salvarEdicao = new EventEmitter();
 
   constructor() { }
+  /**
+   * Muda a tela visível.
+   * @param nome O nome da nova tela (que deve se tornar visível)
+   */
 
-  irPara(nome) {
-    this.navegarEdicao.emit(nome);
-  }
 
   ngOnInit() {
+    if (this.noticias) {
+      this.titulo = this.noticias.titulo;
+      this.conteudo = this.noticias.conteudo;
+      this.autor = this.noticias.autor;
+      this.emailDoAutor = this.noticias.emailDoAutor;
+      this.data = this.noticias.data;
+      }
   }
-  date2str(d) {
-    if (d) {
-      const year = d.getFullYear();
-      const month = (d.getMonth() + 1).toLocaleString(undefined, { minimumIntegerDigits: 2 });
-      const day = d.getDate().toLocaleString(undefined, { minimumIntegerDigits: 2 });
-      const hours = d.getHours().toLocaleString(undefined, { minimumIntegerDigits: 2 });
-      const minutes = d.getMinutes().toLocaleString(undefined, { minimumIntegerDigits: 2 });
-      return `${year}-${month}-${day}T${hours}:${minutes}`;
-    } else {
-      return '';
-    }
-  }
-  salvar(form) {
-    const noticia = this.noticias.find(n => n.id === this.editarNoticia.id);
-    noticia.titulo = this.titulo;
-    noticia.conteudo = this.conteudo;
-    noticia.autor = this.autor;
-    noticia.emailDoAutor = this.emailDoAutor;
-    if (this.data) {
-      noticia.data = new Date(this.data);
-    } else {
-      this.data = null;
-    }
-    this.editarNoticia = null;
-    form.reset();
+  /**
+  * * Salva os dados do formulário de Edição:
+  * Busca a notícia pelo identificador de [`editarNoticia`]{@link AppComponent#editarNoticia} e
+  * atualiza os dados conforme o formulário
+  * @param form O formulário de cadastro
+   * **/
+  salvar() {
+    const noticia = {
+     titulo : this.titulo,
+     conteudo : this.conteudo,
+     autor : this.autor,
+     emailDoAutor : this.emailDoAutor,
+  };
     this.irPara('lista');
-  }
 
-  editar(noticia) {
-    this.editarNoticia = noticia;
-    this.titulo = noticia.titulo;
-    this.conteudo = noticia.conteudo;
-    this.autor = noticia.autor;
-    this.emailDoAutor = noticia.emailDoAutor;
-    this.data = this.date2str(noticia.data);
-    this.irPara('edicao');
+    this.salvarEdicao.emit(noticia);
   }
+  /**
+   * Cancela a edição de uma notícia e torna visível a tela da lista
+   */
   cancelarEdicao() {
-    this.editarNoticia = null;
     this.irPara('lista');
+  }
+  irPara(nome) {
+    this.navegarEdicao.emit(nome);
   }
 
 }

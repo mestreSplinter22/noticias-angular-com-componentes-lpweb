@@ -6,13 +6,24 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./listar-noticias.component.css']
 })
 export class ListarNoticiasComponent implements OnInit {
+  /**
+   * A propriedade de entrada que representa a lista de notícias que devem ser apresentadas
+   */
   @Input()
   noticias;
+  /**
+   * A propriedade de entrada que representa os resultados da busca, refenciando o atributo listaPesquisa de appCompoenent
+   */
   @Input()
   listaPesquisa;
-
+  /**
+   * O evento que permite o componente hospedado navegar pelo compoentente host atraves do metodo irPara()
+   */
   @Output()
   listarNoticias = new EventEmitter();
+
+  @Output()
+    editarNoticia = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
@@ -25,16 +36,10 @@ export class ListarNoticiasComponent implements OnInit {
    *
    * @returns A lista de notícias para apresentar
    */
-  noticiasParaLista() {
-    if (this.listaPesquisa) {
-      return this.noticias.filter(n =>
-        n.titulo.indexOf(this.listaPesquisa) !== -1
-        || n.conteudo.indexOf(this.listaPesquisa) !== -1
-        || n.autor.indexOf(this.listaPesquisa) !== -1
-      );
-    } else {
-      return this.noticias;
-    }
+
+  editar(noticia) {
+    this.editarNoticia.emit(noticia);
+
   }
   /**
    * Exclui uma notícia, após confirmação
@@ -45,6 +50,10 @@ export class ListarNoticiasComponent implements OnInit {
       this.noticias.splice(this.noticias.findIndex(n => n.id === noticia.id), 1);
     }
   }
+  /**
+   * Muda a tela visível.
+   * @param nome O nome da nova tela (que deve se tornar visível)
+   */
   irPara(nome) {
     this.listarNoticias.emit(nome);
   }
