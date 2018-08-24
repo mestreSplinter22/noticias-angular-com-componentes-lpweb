@@ -42,3 +42,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Gerando a documentação
 
 A documentação deste projeto utiliza [compodoc](https://compodoc.app/). Para gerar ou atualizar a documentação execute `npm run build-docs`. Para gerar a documentação e acessá-la por meio do servidor local execute `npm run serve-docs` e acesse `http://localhost:8080`.
+## Alunos envolvidos:
+  João Vitor Moreno, Leonardo Setubal, Marcos Muniz
