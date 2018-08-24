@@ -15,10 +15,10 @@ export class BarraComponent implements OnInit {
 
   ngOnInit() {
   }
-  /**
-   * Muda a tela visível.
-   * @param nome O nome da nova tela (que deve se tornar visível)
-   */
+/**
+ * 
+ * @param nome nome da tela para de destino.
+ */
   irPara(nome){
     this.navegar.emit(nome);
   }
