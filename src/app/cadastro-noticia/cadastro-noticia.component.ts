@@ -11,15 +11,18 @@ import {Noticia} from '../noticia.model';
   styleUrls: ['./cadastro-noticia.component.css']
 })
 export class CadastroNoticiaComponent implements OnInit {
+  /**
+   * A propriedade de entrada que representa a lista de notícias que devem ser apresentadas
+   */
   @Input()
   noticias;
 
-  @Output()
-/**
-   * Emitindo a saida de um evento com algum evento q vc seta no metodo
-   saida pro componente host
+  /**
+   * Emitindo a saida de um evento com algum evento que você seta no método
+   saida para o componente host
    * @type {EventEmitter<any>}
    */
+  @Output()
   listarNoticias = new EventEmitter();
 
   /**
@@ -57,16 +60,10 @@ export class CadastroNoticiaComponent implements OnInit {
     console.log(this.noticias);
   }
   /**
-   * Salva os dados do formulário de cadastro em dois modos:
+   * Salva os dados do formulário de cadastro :
    *
-   * * **cadastro**: quando [`editarNoticia`]{@link AppComponent#editarNoticia} não está definido; e
-   * * **edição**, cc.
-   *
-   * Quando está no modo de cadastro, cria uma instância de {@link Noticia} e a insere no array
+   * No modo de cadastro, cria uma instância de {@link Noticia} e a insere no array
    * [`noticias`]{@link AppComponent#noticias}.
-   *
-   * Quando está no modo de edição, busca a notícia pelo identificador de [`editarNoticia`]{@link AppComponent#editarNoticia} e
-   * atualiza os dados conforme o formulário
    *
    * @param form O formulário de cadastro
    */

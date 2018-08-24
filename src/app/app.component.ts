@@ -155,25 +155,25 @@ export class AppComponent implements OnInit {
     }
   }
 
-  /**
-   * Encontra e retorna as notícias para a lista conforme o campo
-   * de pesquisa [`listaPesquisa`]{@link AppComponent#listaPesquisa}
-   * considerando que seu valor está presente no título, conteúdo ou
-   * nome do autor.
-   *
-   * @returns A lista de notícias para apresentar
-   */
-  noticiasParaLista() {
-    if (this.listaPesquisa) {
-      return this.noticias.filter(n =>
-        n.titulo.indexOf(this.listaPesquisa) !== -1
-        || n.conteudo.indexOf(this.listaPesquisa) !== -1
-        || n.autor.indexOf(this.listaPesquisa) !== -1
-      );
-    } else {
-      return this.noticias;
-    }
-  }
+  // /**
+  //  * Encontra e retorna as notícias para a lista conforme o campo
+  //  * de pesquisa [`listaPesquisa`]{@link AppComponent#listaPesquisa}
+  //  * considerando que seu valor está presente no título, conteúdo ou
+  //  * nome do autor.
+  //  *
+  //  * @returns A lista de notícias para apresentar
+  //  */
+  // noticiasParaLista() {
+  //   if (this.listaPesquisa) {
+  //     return this.noticias.filter(n =>
+  //       n.titulo.indexOf(this.listaPesquisa) !== -1
+  //       || n.conteudo.indexOf(this.listaPesquisa) !== -1
+  //       || n.autor.indexOf(this.listaPesquisa) !== -1
+  //     );
+  //   } else {
+  //     return this.noticias;
+  //   }
+  // }
 
   /**
    * Converte um objeto {@link Date} para o formato de string usado no campo do
@@ -219,11 +219,11 @@ export class AppComponent implements OnInit {
     }
   }
 
-  /**
-   * Cancela a edição de uma notícia e torna visível a tela da lista
-   */
-  cancelarEdicao() {
-    this.editarNoticia = null;
-    this.irPara('lista');
-  }
+  // /**
+  //  * Cancela a edição de uma notícia e torna visível a tela da lista
+  //  */
+  // cancelarEdicao() {
+  //   this.editarNoticia = null;
+  //   this.irPara('lista');
+  // }
 }
