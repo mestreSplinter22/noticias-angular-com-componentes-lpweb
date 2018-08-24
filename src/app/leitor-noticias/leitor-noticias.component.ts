@@ -10,14 +10,23 @@ export class LeitorNoticiasComponent implements OnInit {
   leituraNoticia;
 
   @Output()
+  /**
+   * Emitindo a saida de um evento com algum evento q vc seta no metodo
+   saida pro componente host
+   * @type {EventEmitter<any>}
+   */
   navegacao = new EventEmitter();
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
+
   irPara(nome) {
     this.navegacao.emit(nome);
   }
+
   fechar() {
     this.leituraNoticia = null;
     this.irPara('home');

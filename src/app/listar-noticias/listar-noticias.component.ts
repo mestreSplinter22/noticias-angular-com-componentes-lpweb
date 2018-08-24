@@ -12,11 +12,20 @@ export class ListarNoticiasComponent implements OnInit {
   listaPesquisa;
 
   @Output()
+
+  /**
+   * Emitindo a saida de um evento com algum evento q vc seta no metodo
+   saida pro componente host
+   * @type {EventEmitter<any>}
+   */
   listarNoticias = new EventEmitter();
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
+
   /**
    * Encontra e retorna as notícias para a lista conforme o campo
    * de pesquisa [`listaPesquisa`]{@link AppComponent#listaPesquisa}
@@ -36,6 +45,7 @@ export class ListarNoticiasComponent implements OnInit {
       return this.noticias;
     }
   }
+
   /**
    * Exclui uma notícia, após confirmação
    * @param noticia A notícia para ser excluída
@@ -45,6 +55,7 @@ export class ListarNoticiasComponent implements OnInit {
       this.noticias.splice(this.noticias.findIndex(n => n.id === noticia.id), 1);
     }
   }
+
   irPara(nome) {
     this.listarNoticias.emit(nome);
   }

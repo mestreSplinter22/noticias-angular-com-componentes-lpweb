@@ -16,10 +16,10 @@ export class BarraComponent implements OnInit {
   ngOnInit() {
   }
 /**
- * 
+ *
  * @param nome nome da tela para de destino.
  */
-  irPara(nome){
+  irPara(nome) {
     this.navegar.emit(nome);
   }
 }

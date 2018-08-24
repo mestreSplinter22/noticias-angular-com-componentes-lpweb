@@ -3,7 +3,7 @@ import { Noticia } from '../noticia.model';
 
 /**
  * Componente que implementa a funcionalidade de apresentar a lista de notícias recentes.
- * 
+ *
  * O componente recebe como entrada a lista de notícias. Cada item da lista pode ser clicado e,
  * quando isso acontecer, o componente dispara um evento para permitir o componente host,
  * saber qual notícia foi clicada e executar alguma lógica a partir disso.
@@ -33,11 +33,11 @@ export class NoticiasRecentesComponent implements OnInit {
   }
 
   /**
-   * Método utilizado como tratador para o evento `mostrou`. 
-   * 
+   * Método utilizado como tratador para o evento `mostrou`.
+   *
    * O parâmetro `noticia` é informado para o componente host por meio do método `emit()`
    * do atributo `mostrou`.
-   * 
+   *
    * @param noticia A notícia que foi clicada pelo usuário
    */
   mostrar(noticia) {

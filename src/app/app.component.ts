@@ -2,19 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { Noticia } from './noticia.model';
 
 /**
- * Componente AppComponent. 
- * 
+ * Componente AppComponent.
+ *
  * Este componente implementa as seguintes funcionalidades:
- * 
+ *
  * * apresentar lista das notícias recentes
  * * abrir notícia para leitura
  * * apresentar lista de todas as notícias
  * * cadastrar notícia
  * * editar notícia
  * * excluir notícia
- * 
+ *
  * O componente utiliza variáveis de controle para tornar as seguintes telas visíveis:
- * 
+ *
  * * **home**: apresenta a lista das notícias recentes
  * * **leitura**: apresenta uma notícia no modo de leitura
  * * **lista**: apresenta a lista de todas as notícias
@@ -108,11 +108,11 @@ export class AppComponent implements OnInit {
 
 
   /**
-   * Encontra e retorna as notícias publicadas. 
-   * 
-   * Utiliza os métodos da classe {@link Array}: 
-   * 
-   * * `filter()`: para encontrar apenas as notícias publicadas, usando o método 
+   * Encontra e retorna as notícias publicadas.
+   *
+   * Utiliza os métodos da classe {@link Array}:
+   *
+   * * `filter()`: para encontrar apenas as notícias publicadas, usando o método
    * [`estahPublicada()`]{@link Noticia#estahPublicada} da classe {@link Noticia}
    * * `sort()`: para ordenar as notícias de forma decrescente pela data
    * @returns Lista das notícias publicadas
@@ -150,7 +150,7 @@ export class AppComponent implements OnInit {
 
 
   /**
-   * Converte um objeto {@link Date} para o formato de string usado no campo do 
+   * Converte um objeto {@link Date} para o formato de string usado no campo do
    * formulário (datetime-local), adotando o formato: YYYY-MM-DDThh:mm, sendo:
    * **YYYY** o ano com quatro dígitos (resultado do método `getFullYear()`),
    * **MM** o mês com dois dígitos (resultado do método `getMonth()`, notar a necessidade
