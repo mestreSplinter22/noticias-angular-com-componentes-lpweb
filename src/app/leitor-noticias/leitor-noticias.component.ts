@@ -10,6 +10,11 @@ export class LeitorNoticiasComponent implements OnInit {
   leituraNoticia;
 
   @Output()
+    /**
+ * Compomente de cadastro de noticia.
+ * Nele temos as variaveis para salvar a noticia e o metado de salvar as noticias
+ */
+
   navegacao = new EventEmitter();
   constructor() { }
 
