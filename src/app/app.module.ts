@@ -10,6 +10,8 @@ import { EditarNoticiaComponent } from './editar-noticia/editar-noticia.componen
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { AppRoutingModule } from './/app-routing.module';
+import { ListarNoticiasComponent } from './listar-noticias/listar-noticias.component';
+import { LeitorNoticiasComponent } from './leitor-noticias/leitor-noticias.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AppRoutingModule } from './/app-routing.module';
     NoticiasRecentesComponent,
     BarraComponent,
     CadastroNoticiaComponent,
-    EditarNoticiaComponent
+    EditarNoticiaComponent,
+    ListarNoticiasComponent,
+    LeitorNoticiasComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,7 @@ import { AppRoutingModule } from './/app-routing.module';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    AppRoutingModule
+    // AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
